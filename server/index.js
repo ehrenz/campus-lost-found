@@ -46,10 +46,6 @@ db.run(`
   )
 `);
 
-app.get("/", (req, res) => {
-  res.send("Campus Lost and Found API is running");
-});
-
 // Public board: only show available items
 app.get("/api/items", (req, res) => {
   db.all(
