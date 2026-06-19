@@ -327,7 +327,7 @@
 export default {
   data() {
     return {
-      serverUrl: "http://localhost:3000",
+      serverUrl: "",
       items: [],
       adminItems: [],
 
@@ -422,7 +422,7 @@ export default {
 
   methods: {
     async loadItems() {
-      const response = await fetch("http://localhost:3000/api/items");
+      const response = await fetch("/api/items");
       this.items = await response.json();
     },
 
@@ -452,7 +452,7 @@ export default {
     },
 
     async loadAdminItems() {
-      const response = await fetch("http://localhost:3000/api/admin/items");
+      const response = await fetch("/api/admin/items");
       const data = await response.json();
 
       this.adminItems = data.map((item) => {
@@ -503,7 +503,7 @@ export default {
         formData.append("image", this.selectedImage);
       }
 
-      await fetch("http://localhost:3000/api/items", {
+      await fetch("/api/items", {
         method: "POST",
         body: formData
       });
@@ -534,7 +534,7 @@ export default {
     },
 
     async approveItem(id) {
-      await fetch(`http://localhost:3000/api/items/${id}/approve`, {
+      await fetch(`/api/items/${id}/approve`, {
         method: "PUT"
       });
 
@@ -543,7 +543,7 @@ export default {
     },
 
     async markReturned(id) {
-      await fetch(`http://localhost:3000/api/items/${id}/returned`, {
+      await fetch(`/api/items/${id}/returned`, {
         method: "PUT"
       });
 
@@ -552,7 +552,7 @@ export default {
     },
 
     async deleteItem(id) {
-      await fetch(`http://localhost:3000/api/items/${id}`, {
+      await fetch(`/api/items/${id}`, {
         method: "DELETE"
       });
 
@@ -570,7 +570,7 @@ export default {
         status: item.status
       };
 
-      await fetch(`http://localhost:3000/api/items/${item.id}`, {
+      await fetch(`/api/items/${item.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
