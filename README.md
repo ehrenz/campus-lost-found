@@ -1,13 +1,7 @@
-Teacher Notes
+## For the Instructor
 
-To access the administrator section, please click the "LOST & FOUND" title on the homepage.
+To access the admin page, click the **"LOST & FOUND"** title located at the top of the homepage.
 
-Admin Password: admin123
+**Password:** `admin123`
 
-The administrator panel allows you to:
-
-Review submitted items
-Approve pending submissions
-Edit item information
-Mark items as returned
-Delete items
+The admin page is used to review and manage lost-and-found submissions, including approving, editing, returning, and deleting items.
